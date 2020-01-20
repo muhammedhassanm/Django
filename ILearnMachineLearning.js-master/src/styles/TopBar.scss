@@ -1,0 +1,88 @@
+.TopBar {
+    width: 100%;
+    height: $topBarHeight;
+    padding: 2px 5px;
+    
+    background-color: $topBarBackgroundColor;
+    color: $topBarTexColor;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    //box-shadow: 0 0 4px rgba(255,255,255,.14), 0 4px 8px rgba(255,255,255,.28);
+
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+
+    touch-action: none;
+
+    .TopBarGroup {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: center;
+
+        .Logo {
+            padding: 0 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .MainHeader {
+            font-size: 25px;
+            margin: 0 10px;
+        }
+
+        .AdditionalHeader {
+            font-size: 15px;
+            margin: 0 25px;
+        }
+    }
+
+    &::after {
+        background: linear-gradient(to right, $topBarAlternativeColorFirst, $topBarAlternativeColorSecond);
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 64px;
+        height: 3.5px;
+        left: 0;
+        z-index: 500;
+    }
+}
+
+.TopBar.loading::after {
+    background: -webkit-linear-gradient(right, $topBarAlternativeColorFirst, $topBarAlternativeColorSecond, $topBarAlternativeColorFirst);
+    background: linear-gradient(270deg, $topBarAlternativeColorFirst, $topBarAlternativeColorSecond, $topBarAlternativeColorFirst);
+    background-size: 400% 400%;
+    -webkit-animation: single13anim 3s ease-in-out infinite;
+    animation: single13anim 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes single13anim {
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0% 50%}
+}
+
+@keyframes single13anim {
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0% 50%}
+}
+
+
+
+
+
+

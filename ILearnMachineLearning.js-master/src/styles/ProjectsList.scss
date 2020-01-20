@@ -1,0 +1,27 @@
+.ProjectsList {
+    width: 100%;
+    height: calc(100vh - #{$topBarHeight});
+    box-shadow: inset 0px 10px 30px -10px black;
+}
+
+.InnerProjectsList {
+    &.desktop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-around;
+    }
+    &.mobile {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+    }
+}
